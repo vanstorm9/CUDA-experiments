@@ -15,10 +15,10 @@ __global__ void cube(float * d_out, float * d_in){
 int main(int argc, char ** argv) {
 	const int ARRAY_SIZE = 96;
 	const int ARRAY_BYTES = ARRAY_SIZE * sizeof(float);
-	int i = 0;
+	//int i = 0;
 	// generate the input array on the host
 	float h_in[ARRAY_SIZE];
-	for (i = 0; i < ARRAY_SIZE; i++) {
+	for (int i = 0; i < ARRAY_SIZE; i++) {
 		h_in[i] = float(i);
 	}
 	float h_out[ARRAY_SIZE];
@@ -41,7 +41,7 @@ int main(int argc, char ** argv) {
 	cudaMemcpy(h_out, d_out, ARRAY_BYTES, cudaMemcpyDeviceToHost);
 
 	// print out the resulting array
-	for (i =0; i < ARRAY_SIZE; i++) {
+	for (int i =0; i < ARRAY_SIZE; i++) {
 		printf("%f", h_out[i]);
 		printf(((i % 4) != 3) ? "\t" : "\n");
 	}
