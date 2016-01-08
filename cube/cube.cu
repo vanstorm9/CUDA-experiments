@@ -1,4 +1,9 @@
-nclude <stdio.h>
+#include <stdio.h>
+
+// To compile CUDA code:
+// 1) save as .cu file
+// 2) nvcc FileName.cu   # for compiling
+// 3) a.exe              # to run program
 
 __global__ void cube(float * d_out, float * d_in){
 	// Todo: Fill in this function
